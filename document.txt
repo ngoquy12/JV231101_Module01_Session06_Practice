@@ -1,0 +1,13 @@
+5 loại position : left, right, top, bottom: Nó có thể nhận vào một giá trị âm
++ Relative
+  - Nó sẽ lấy vị trí mà nó đang đứng làm gốc tọa độ
+  - Nếu đứng một mình thì phần tử đó sẽ lấy trình duyệt làm gốc tọa độ
++ Absolute
+  - Nó sẽ phụ thuộc vào phần tử cha gần nhất có thuộc tính position 
+    là relative hoặc absolute làm gốc toạ độ
++ Fixed
+  - Nó sẽ dựa vào trình duyệt làm gốc tọa độ
++ Sticky
+  - Nó sẽ được kích hoạt khi cuộn màn hình, dựa vào trình duyệt làm gốc toạ độ
++ Static
+  - Nó là mặc định tức là chúng ta không sử dụng 4 loại position ở trên
