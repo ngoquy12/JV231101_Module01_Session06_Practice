@@ -203,3 +203,122 @@ body {
     width: 100%;
   }
 }
+
+/* Notifycation */
+.notifycation {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  min-width: 300px;
+  height: 100vh;
+  animation: fadeIn 0.3s linear;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* CSS grid */
+.grid-container {
+  /* margin: 30px; */
+  display: grid;
+  /* grid-template-columns: Số cột trên một hàng; */
+  /* grid-template-columns: calc(20% - 10px) calc(30% - 10px) 50%; */
+  /* grid-template-columns: calc(33.33% - 10px) calc(33.33% - 10px) 33.33%; */
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(4, 1fr);
+
+  /* Track line theo hàng: Số cột + 1 */
+  /* Track line theo cột: Số hàng + 1 */
+
+  /* grid-template-rows: 300px 300px 300px; */
+  /* grid-template-rows: repeat(3, 300px); */
+
+  /* grid-gap: Giãn các phần tử xa nhau ra */
+  /* grid-column-gap: 30px;
+  grid-row-gap: 20px; */
+  /* grid-gap: 10px; */
+  gap: 10px;
+}
+
+.grid-item {
+  background-color: red;
+  border: 1px solid #fff;
+  height: 300px;
+}
+
+.grid-container .grid-item:first-child {
+  /* grid-column-start: Track-line start; */
+  /* grid-column-start: 1; */
+
+  /* grid-column-end: Track-line end; */
+  /* grid-column-end: 3; */
+
+  /* grid-column: Track-line start / Track-line end; */
+  grid-column: 1/3;
+
+  grid-row: 1/3;
+}
+
+@media screen and (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* CSS grid layout */
+.layout-container {
+  height: 700px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 300px 100px 300px;
+  gap: 10px;
+  width: 80%;
+}
+
+.layout-item {
+}
+
+.layout-container .layout-item:first-child {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.layout-container .layout-item:nth-child(2),
+.layout-container .layout-item:nth-child(3) {
+  grid-row: 1/3;
+}
+
+.layout-container .layout-item:nth-child(4),
+.layout-container .layout-item:nth-child(5) {
+  grid-row: 2/4;
+}
+
+.layout-container .layout-item:last-child {
+  grid-column: 3/5;
+}
+
+.layout-item img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
